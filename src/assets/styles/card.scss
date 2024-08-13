@@ -1,0 +1,371 @@
+/* Card */
+.card {
+    margin-bottom: 30px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0 30px rgba(1, 41, 112, 0.1);
+    border: 1px solid rgba(234, 236, 240, 1);
+  }
+  .card-txt{
+    width: Fill 1,368px;
+    height:91px;
+    gap: 0px;
+    border: 0px 0px 1px 0px;
+    opacity: 0px;
+  }
+  .card-header,
+  .card-footer {
+    border-color: #ebeef4;
+    background-color: #fff;
+    color: #798eb3;
+    padding: 15px;
+  }
+  
+  .card-title {
+    padding: 20px 0 15px 0;
+    font-size: 18px;
+    font-weight: 500;
+    color: #012970;
+  
+  }
+  
+  .card-title span {
+    color: #899bbd;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  
+  .card-body {
+    padding: 0 20px 20px 20px;
+  }
+  
+  .card-img-overlay {
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+  
+  .uploadImg {
+    width: 552px;
+    height: 276px;
+    top: 271px;
+    left: 1108px;
+    gap: 0px;
+    border-radius: 4px 0px 0px 0px;
+    border: 1.5px 0px 0px 0px;
+    opacity: 0px;
+    border: 1px solid rgba(238, 239, 243, 1);
+  
+    .imgBig {
+      width: 224px;
+      height: 224px;
+      top: 297px;
+      left: 1272px;
+      gap: 0px;
+      opacity: 0px;
+    }
+  
+    .iconBig {
+      margin-top: -200px;
+      margin-right: -50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+    }
+  
+    .imgFieldsmall {
+      width: 162px;
+      height: 146px;
+      top: 603px;
+      left: 1294px;
+      gap: 0px;
+      border-radius: 4px 0px 0px 0px;
+      border: 1px 0px 0px 0px;
+      opacity: 0px;
+      border: 1px solid black;
+    }
+  }
+  
+  .card form {
+    label {
+      font-family: Inter;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 22px;
+      text-align: left;
+  
+    }
+  
+    .additionalImg {
+      width: 113px;
+      height: 20px;
+      top: 571px;
+      left: 1108px;
+    }
+  
+    input,
+    textarea,
+    select {
+      background: rgba(226, 226, 226, 0.25);
+    }
+  }
+  
+  .card {
+    height: Hug (90px)px;
+    gap: 0px;
+    border-radius: 8px;
+    border: 1px 1px 1px 1px;
+    opacity: 0px;
+  
+    input,
+    textarea,
+    select {
+  
+      placeholder,
+      value {
+        color: rgba(102, 112, 133, 0.75);
+      }
+    }
+  
+    overflow-y: auto;
+  }
+  
+  .card-request {
+    height: 450px;
+    overflow-x: auto;
+    overflow-y: scroll;
+  }
+  
+  /* Table-content */
+  .table-Request {
+    tr {
+      text-align: center;
+    }
+  
+    td {
+      text-align: center;
+    }
+  
+    .boxId {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .boxitemName {
+      display: flex;
+      align-items: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .boxQty {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  
+      .boxbtn {
+        display: flex;
+        border: 1px solid rgb(195, 195, 195);
+        border-radius: 5px;
+        padding: 3px;
+        align-items: center;
+        justify-content: center;
+  
+        .boxInc,
+        .boxDec {
+          border: 1px solid rgb(195, 195, 195);
+          border-radius: 3px;
+          margin: 0px 5px;
+          height: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+  
+        .num {
+          margin: 0px 5px;
+        }
+  
+      }
+  
+      .boxRemove {
+        margin: 0px 5px;
+        padding: 5px;
+        color: red;
+      }
+    }
+  }
+  
+  .dashed-border {
+    border: 2px dashed #ccc;
+    padding: 20px;
+  }
+  
+  .table-addItem {
+  
+    thead,
+    tr,
+    th {
+      background: #fffbf8;
+    }
+  
+    tbody {
+      .itemBox {
+        display: flex;
+      }
+  
+      .itemBox .imgbox {
+        top: 281px;
+        left: 360px;
+  
+        img {
+          border-radius: 10px;
+          margin: 3px;
+        }
+      }
+  
+      .itemBox .boxcontent {
+        .name {
+  
+          display: flex;
+          justify-content: start;
+          font-family: Inter;
+          font-size: 24px;
+          font-weight: 500;
+          line-height: 34px;
+          text-align: left;
+  
+        }
+  
+        .qty {
+          width: 100%;
+          height: 50%;
+  
+          .boxbtn {
+            width: 100px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid rgb(195, 195, 195);
+            border-radius: 3px;
+  
+            .boxInc,
+            .boxDec {
+              border: 1px solid rgb(195, 195, 195);
+              border-radius: 3px;
+              height: fit-content;
+              margin: 0px 5px;
+              width: 20px;
+              height: 20px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+  
+            .num {
+              font-size: 15px;
+            }
+          }
+        }
+      }
+  
+      .boxBtn {
+        display: flex;
+        justify-content: start;
+        align-content: center;
+        width: 142px;
+        height: 50px;
+        top: 369px;
+        left: 522px;
+        gap: 0px;
+        opacity: 0px;
+  
+        .boxContent {
+          height: 100%;
+          display: flex;
+          margin-top: 30px;
+          align-items: center;
+        }
+  
+        .btnCencel,
+        .btnAdd {
+          width: 85px;
+          height: 30px;
+          margin: 3px;
+          background-color: white;
+          border-radius: 5px;
+          width: 127px;
+          height: Hug (40px)px;
+          top: 336px;
+          left: 1414px;
+          gap: 0px;
+          border-radius: 8px;
+          opacity: 0px;
+        }
+  
+        .btnCencel {
+          border: 1px solid rgb(195, 195, 195);
+  
+        }
+  
+        .btnAdd {
+          border: 1px solid rgba(17, 134, 203, 1);
+        }
+      }
+    }
+  }
+  
+  .pagination {
+    width: Hug (260px)px;
+    height: Hug (52px)px;
+    top: 1041px;
+    left: 1444px;
+    padding: 10px 0px 0px 0px;
+    gap: 20px;
+    opacity: 0px;
+  
+    a {
+      width: 32px;
+      height: 32px;
+      padding: 4px 0px 0px 0px;
+      gap: 0px;
+      border-radius: 6px;
+      border: 1px solid rgb(220, 220, 220);
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      margin: 5px;
+  
+    }
+  
+  }
+  
+  tr,
+  td {
+    text-align: center;
+  }
+  
+  .th-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* Space between text and icon */
+    font-size: 10px;
+    padding: 1px;
+  }
+  
+  .th-flex i {
+    margin-left: 4px;
+    /* Adjust space between text and icon if needed */
+  }
+  
+  /* PDF styling  */
+  .pdf-color {
+    background: rgba(250, 250, 250, 1);
+  }

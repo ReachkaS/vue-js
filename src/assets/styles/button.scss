@@ -1,0 +1,76 @@
+/* Button */
+
+.btn-createEvent {
+    border: none;
+    outline: none;
+    display: flex;
+    justify-content: space-around;
+    button {
+        font-family: Inter;
+    }
+}
+
+.btn {
+    border-radius: 8px;
+}
+
+/* button */
+@media (max-width: 576px) {
+    .btn-createEvent {
+        a {
+            font-size: 10px;
+        }
+    }
+
+    .btn {
+        font-size: 10px;
+
+    }
+}
+
+.btnSaveDraft {
+    width: 120px;
+    height: 40px;
+    gap: 0px;
+    border-radius: 8px;
+    opacity: 0px;
+    color: rgba(255, 255, 255, 1);
+    font-size: 14px;
+    background: rgba(10, 80, 122, 1);
+    font-family: Inter;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnSaveDraft:hover {
+    background: rgba(10, 80, 122, 1);
+    color: rgba(255, 255, 255, 1);
+}
+
+.btnSavePublish {
+    width: 130px;
+    height: 40px;
+    gap: 0px;
+    font-size: 14px;
+    border-radius: 8px;
+    color: rgba(255, 255, 255, 1);
+    background: rgba(17, 134, 203, 1);
+    font-family: Inter;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.btnSavePublish:hover {
+    background: rgba(17, 134, 203, 1);
+    color: rgba(255, 255, 255, 1);
+}
+
+.btnExport {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+}
