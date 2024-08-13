@@ -17,7 +17,6 @@ import SideBar      from './components/sidebar.vue'
 
 export default {
   name: 'App',
-
   components: {
     HeaderNavbar, SideBar
   },
@@ -25,6 +24,3 @@ export default {
 }
 </script>
 
-<!-- <style >
-  @import './style.css';
-</style> -->
