@@ -6,24 +6,15 @@
       <a href="index.html" class="logo d-flex align-items-center">
         <span class="d-none d-lg-block logo-title">LOGO</span>
       </a>
-      <div>
-        <img src="../assets/images/bell.png" alt="">
-        <img src="../assets/images/threeBars.png" alt="" class="toggle-sidebar-btn"
-          v-toggle-class:body="'toggle-sidebar'">
-      </div>
+           <img src="../assets/images/bell.png" alt="">
+           <img src="../assets/images/threeBars.png" alt="" class="toggle-sidebar-btn"
+              v-toggle-class:body="'toggle-sidebar'">       
     </div><!-- End Logo -->
     <div class="header-title col-lg-5 px-5">
       Event Management
     </div>
     <nav class="header-nav ms-auto">
       <ul class="d-flex align-items-center">
-
-        <li class="nav-item d-block d-lg-none">
-          <a class="nav-link nav-icon search-bar-toggle " href="#">
-            <i class="bi bi-search"></i>
-          </a>
-        </li><!-- End Search Icon-->
-
 
         <li class="nav-item dropdown pe-3">
 

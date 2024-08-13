@@ -21,8 +21,8 @@
                                 </nav>
                             </div>
 
-                            <div class="btn-createEvent shadow-none d-md-block d-lg-flex col-lg-2">
-                                <a class="btn filter border-0 bg-white m-1 col-8 col-md-8 col-lg-12 btn-sm"><i
+                            <div class="btn-createEvent shadow-none d-md-block d-lg-flex col-lg-2 ">
+                                <a type="button" class="btn filter border-0 bg-white m-1 col-8 col-md-8 col-lg-12 btn-sm"><i
                                         class="bi bi-filter"></i> Filter</a>
                                 <a type="button" class="btn border-black btn-sm m-1 col-8 col-md-8 col-lg-12"><i
                                         class="bi bi-cloud-download "></i> Export</a>
