@@ -3,12 +3,14 @@
   <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="header-logo d-flex align-items-center justify-content-between col-lg-2">
-      <a href="index.html" class="logo d-flex align-items-center">
+      <router-link to="/" class="logo d-flex align-items-center">
         <span class="d-none d-lg-block logo-title">LOGO</span>
-      </a>
+      </router-link>
+        <div>
            <img src="../assets/images/bell.png" alt="">
            <img src="../assets/images/threeBars.png" alt="" class="toggle-sidebar-btn"
               v-toggle-class:body="'toggle-sidebar'">       
+        </div>  
     </div><!-- End Logo -->
     <div class="header-title col-lg-5 px-5">
       Event Management
@@ -88,6 +90,6 @@ export default {
   name: 'HeaderNavbar',
   props: {
     msg: String
-  }
+  },
 }
 </script>

@@ -18,11 +18,12 @@
                 </router-link>
             </li><!-- End Dashboard Nav -->
             <li class="nav-item">
-                <router-link to="/" class="nav-link collapsed"><i class="bi bi-ticket-perforated"></i><span>Event Management</span></router-link>
+                <router-link to="/listEvent" class="nav-link collapsed"><i class="bi bi-ticket-perforated"></i><span>Event Management</span></router-link>
             </li><!-- End Forms Nav -->
             </ul>
 
-    </aside><!-- End Sidebar-->
+    </aside>
+    <!-- End Sidebar-->
 </template>
 
 <script>

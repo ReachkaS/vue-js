@@ -1,34 +1,35 @@
 <template>
     <!-- ======= mainPanel ======= -->
     <main id="main" class="main ">
-        <section class="section">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="card mb-3 col-12">
-                        <div class="card-body d-flex justify-content-between align-items-center mt-3">
-                            <div class="txt">
-                                <h4>Request Item</h4>
-                                <nav>
-                                    <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="/">Dashboard </a></li>
-                                        <li class="breadcrumb-item"><a href="/LISTEVENT">List event </a></li>
-                                        <li class="breadcrumb-item"><a href="REQUESTITEM"> <span
-                                                    style="color:rgba(17, 134, 203, 1)">Request</span></a></li>
-                                    </ol>
-                                </nav>
-                            </div>
-
-                            <div class="btn btn-createEvent shadow-none d-block d-mg-flex d-lg-flex">
-                                <button type="button" class="btn btn-dark btn-sm w-100 m-1"
+        <section>
+        <div class="row g-0 mb-3">
+          <div class="card">
+            <div class="card-body d-flex justify-content-around align-items-center">
+              <div class="col-3 col-md-5 col-lg-9">
+                <p class="card-title"> Return Item</p>
+                <nav>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><router-link to="/listEvent">List
+                                Event</router-link></li>
+                        <li class="breadcrumb-item"><router-link to="/listEvent/listRequest">List
+                            Event</router-link></li>
+                        <li class="breadcrumb-item"><router-link to="/listEvent/listRequest/returnItem"> 
+                            <span style="color:rgba(17, 134, 203, 1)">Return</span></router-link>
+                        </li>
+                    </ol>
+                </nav>
+              </div>
+              <div class="col-5 col-md-5 col-lg-3 d-lg-flex d-md-flex d-block  btn-createEvent shadow-none">
+                <button type="button" class="btn btn-dark btn-sm  m-1"
                                     style="background: rgba(10, 80, 122, 1);">Save as draft</button>
-                                <a href="/LISTREQUEST"><button type="button" class="btn btn-primary btn-sm w-100 m-1"
-                                        style="background:rgba(17, 134, 203, 1)">Request</button></a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+                <router-link to="/listEvent/listRequest/"><button type="button" class="btn btn-primary btn-sm m-1"
+                                        style="background:rgba(17, 134, 203, 1)">Return</button></router-link>
+              </div>
             </div>
+          </div>
+        </div>
+      </section>
+        <section class="section">
             <div class="">
                 <section class="section row">
                     <div class=" col-12 col-md-12 col-lg-6 p-3">
@@ -51,12 +52,6 @@
                                     </select>
                                 </div>
                             </form>
-                            <div class="addItem d-flex justify-content-end">
-                                <a href="/ADDITEM"><button type="button"
-                                        class="btn btn-primary mt-3 mb-3 btn-sm color-white"
-                                        style="background:rgba(17, 134, 203, 1)"><i class="bi bi-plus-lg"></i>Add
-                                        Iem</button></a>
-                            </div>
                             <div class="card card-request shadow-none border-0">
                                 <table class="table table-Request col-12 col-md-12 col-lg-12">
                                     <thead>
@@ -67,290 +62,26 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
+                                        <tr v-for="item in items" :key="item.id">
                                             <td scope="row">
-                                                <div class="boxId">1</div>
+                                                <div class="boxId">{{ item.id }}</div>
                                             </td>
                                             <td>
                                                 <div class="boxitemName">
-                                                    <img src="https://www.ikea.com/us/en/images/products/nordviken-chair-antique-stain__0832454_pe777681_s5.jpg"
+                                                    <img :src="item.image"
                                                         alt="" height="25px">
-                                                    <p class="m-1">Chair</p>
+                                                    <p class="m-1">{{ item.name }}</p>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="boxQty ">
                                                     <div class="boxbtn">
-                                                        <div class="boxInc"><i class="bi bi-dash-lg"></i></div>
-                                                        <div class="num">10</div>
-                                                        <div class="boxDec"><i class="bi bi-plus-lg"></i></div>
+                                                        <button type="button" class="boxDec bg-white" @click="decrement(item.id)"><i class="bi bi-dash-lg"></i></button>
+                                                                <div class="num">{{ itemCounts[item.id || 0] }}</div>
+                                                                <button type="button" class="boxInc bg-white" @click="increment(item.id)"><i class="bi bi-plus-lg"></i></button>
                                                     </div>
                                                     <div class="boxRemove">
-                                                        <i class="bi bi-trash3"></i>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="boxId">2</div>
-                                            </td>
-                                            <td>
-                                                <div class="boxitemName">
-                                                    <img src="https://cdn.shopify.com/s/files/1/0507/6793/products/callway_1_1024x1024.JPG?v=1484592087"
-                                                        alt="" height="25px">
-                                                    <p class="m-1">Sofa</p>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="boxQty ">
-                                                    <div class="boxbtn">
-                                                        <div class="boxInc"><i class="bi bi-dash-lg"></i></div>
-                                                        <div class="num">10</div>
-                                                        <div class="boxDec"><i class="bi bi-plus-lg"></i></div>
-                                                    </div>
-                                                    <div class="boxRemove">
-                                                        <i class="bi bi-trash3"></i>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td scope="row">
-                                                <div class="boxId">3</div>
-                                            </td>
-                                            <td>
-                                                <div class="boxitemName">
-                                                    <img src="https://www.ikea.com/us/en/images/products/nordviken-chair-antique-stain__0832454_pe777681_s5.jpg"
-                                                        alt="" height="25px">
-                                                    <p class="m-1">Chair</p>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="boxQty ">
-                                                    <div class="boxbtn">
-                                                        <div class="boxInc"><i class="bi bi-dash-lg"></i></div>
-                                                        <div class="num">10</div>
-                                                        <div class="boxDec"><i class="bi bi-plus-lg"></i></div>
-                                                    </div>
-                                                    <div class="boxRemove">
-                                                        <i class="bi bi-trash3"></i>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td scope="row">
-                                                <div class="boxId">3</div>
-                                            </td>
-                                            <td>
-                                                <div class="boxitemName">
-                                                    <img src="https://www.ikea.com/us/en/images/products/nordviken-chair-antique-stain__0832454_pe777681_s5.jpg"
-                                                        alt="" height="25px">
-                                                    <p class="m-1">Chair</p>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="boxQty ">
-                                                    <div class="boxbtn">
-                                                        <div class="boxInc"><i class="bi bi-dash-lg"></i></div>
-                                                        <div class="num">10</div>
-                                                        <div class="boxDec"><i class="bi bi-plus-lg"></i></div>
-                                                    </div>
-                                                    <div class="boxRemove">
-                                                        <i class="bi bi-trash3"></i>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td scope="row">
-                                                <div class="boxId">4</div>
-                                            </td>
-                                            <td>
-                                                <div class="boxitemName">
-                                                    <img src="https://www.ikea.com/us/en/images/products/nordviken-chair-antique-stain__0832454_pe777681_s5.jpg"
-                                                        alt="" height="25px">
-                                                    <p class="m-1">Chair</p>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="boxQty ">
-                                                    <div class="boxbtn">
-                                                        <div class="boxInc"><i class="bi bi-dash-lg"></i></div>
-                                                        <div class="num">10</div>
-                                                        <div class="boxDec"><i class="bi bi-plus-lg"></i></div>
-                                                    </div>
-                                                    <div class="boxRemove">
-                                                        <i class="bi bi-trash3"></i>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td scope="row">
-                                                <div class="boxId">5</div>
-                                            </td>
-                                            <td>
-                                                <div class="boxitemName">
-                                                    <img src="https://www.ikea.com/us/en/images/products/nordviken-chair-antique-stain__0832454_pe777681_s5.jpg"
-                                                        alt="" height="25px">
-                                                    <p class="m-1">Chair</p>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="boxQty ">
-                                                    <div class="boxbtn">
-                                                        <div class="boxInc"><i class="bi bi-dash-lg"></i></div>
-                                                        <div class="num">10</div>
-                                                        <div class="boxDec"><i class="bi bi-plus-lg"></i></div>
-                                                    </div>
-                                                    <div class="boxRemove">
-                                                        <i class="bi bi-trash3"></i>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td scope="row">
-                                                <div class="boxId">6</div>
-                                            </td>
-                                            <td>
-                                                <div class="boxitemName">
-                                                    <img src="https://www.ikea.com/us/en/images/products/nordviken-chair-antique-stain__0832454_pe777681_s5.jpg"
-                                                        alt="" height="25px">
-                                                    <p class="m-1">Chair</p>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="boxQty ">
-                                                    <div class="boxbtn">
-                                                        <div class="boxInc"><i class="bi bi-dash-lg"></i></div>
-                                                        <div class="num">10</div>
-                                                        <div class="boxDec"><i class="bi bi-plus-lg"></i></div>
-                                                    </div>
-                                                    <div class="boxRemove">
-                                                        <i class="bi bi-trash3"></i>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td scope="row">
-                                                <div class="boxId">7</div>
-                                            </td>
-                                            <td>
-                                                <div class="boxitemName">
-                                                    <img src="https://www.ikea.com/us/en/images/products/nordviken-chair-antique-stain__0832454_pe777681_s5.jpg"
-                                                        alt="" height="25px">
-                                                    <p class="m-1">Chair</p>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="boxQty ">
-                                                    <div class="boxbtn">
-                                                        <div class="boxInc"><i class="bi bi-dash-lg"></i></div>
-                                                        <div class="num">10</div>
-                                                        <div class="boxDec"><i class="bi bi-plus-lg"></i></div>
-                                                    </div>
-                                                    <div class="boxRemove">
-                                                        <i class="bi bi-trash3"></i>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td scope="row">
-                                                <div class="boxId">8</div>
-                                            </td>
-                                            <td>
-                                                <div class="boxitemName">
-                                                    <img src="https://www.ikea.com/us/en/images/products/nordviken-chair-antique-stain__0832454_pe777681_s5.jpg"
-                                                        alt="" height="25px">
-                                                    <p class="m-1">Chair</p>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="boxQty ">
-                                                    <div class="boxbtn">
-                                                        <div class="boxInc"><i class="bi bi-dash-lg"></i></div>
-                                                        <div class="num">10</div>
-                                                        <div class="boxDec"><i class="bi bi-plus-lg"></i></div>
-                                                    </div>
-                                                    <div class="boxRemove">
-                                                        <i class="bi bi-trash3"></i>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td scope="row">
-                                                <div class="boxId">9</div>
-                                            </td>
-                                            <td>
-                                                <div class="boxitemName">
-                                                    <img src="https://www.ikea.com/us/en/images/products/nordviken-chair-antique-stain__0832454_pe777681_s5.jpg"
-                                                        alt="" height="25px">
-                                                    <p class="m-1">Chair</p>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="boxQty ">
-                                                    <div class="boxbtn">
-                                                        <div class="boxInc"><i class="bi bi-dash-lg"></i></div>
-                                                        <div class="num">10</div>
-                                                        <div class="boxDec"><i class="bi bi-plus-lg"></i></div>
-                                                    </div>
-                                                    <div class="boxRemove">
-                                                        <i class="bi bi-trash3"></i>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td scope="row">
-                                                <div class="boxId">10</div>
-                                            </td>
-                                            <td>
-                                                <div class="boxitemName">
-                                                    <img src="https://www.ikea.com/us/en/images/products/nordviken-chair-antique-stain__0832454_pe777681_s5.jpg"
-                                                        alt="" height="25px">
-                                                    <p class="m-1">Chair</p>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="boxQty ">
-                                                    <div class="boxbtn">
-                                                        <div class="boxInc"><i class="bi bi-dash-lg"></i></div>
-                                                        <div class="num">10</div>
-                                                        <div class="boxDec"><i class="bi bi-plus-lg"></i></div>
-                                                    </div>
-                                                    <div class="boxRemove">
-                                                        <i class="bi bi-trash3"></i>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td scope="row">
-                                                <div class="boxId">11</div>
-                                            </td>
-                                            <td>
-                                                <div class="boxitemName">
-                                                    <img src="https://www.ikea.com/us/en/images/products/nordviken-chair-antique-stain__0832454_pe777681_s5.jpg"
-                                                        alt="" height="25px">
-                                                    <p class="m-1">Chair</p>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="boxQty ">
-                                                    <div class="boxbtn">
-                                                        <div class="boxInc"><i class="bi bi-dash-lg"></i></div>
-                                                        <div class="num">10</div>
-                                                        <div class="boxDec"><i class="bi bi-plus-lg"></i></div>
-                                                    </div>
-                                                    <div class="boxRemove">
-                                                        <i class="bi bi-trash3"></i>
+                                                        <button type="button" class="border-0 bg-white " @click="removeItem(item.id)"><i class="bi bi-trash3"></i></button> 
                                                     </div>
                                                 </div>
                                             </td>
@@ -394,13 +125,18 @@
                                     <div
                                         class="m-3 d-flex justify-content-center align-items-center p-1 dashed-border w-50">
                                         <div class="contentBox ">
-                                            <div class="iconUpload d-flex justify-content-center"><i
-                                                    class="bi bi-cloud-upload-fill"></i></div>
-                                            <p class="d-flex justify-content-center text-align-center">Drag & Drop File
-                                                here</p>
-                                            <div class="iconUpload d-flex justify-content-center"><button type="button"
-                                                    class="btn btn-dark btn-sm mb-1 d-flex justify-content-center">Upload
-                                                    File</button></div>
+                                            <label class="custum-file-upload" for="file">
+                                                <div class="icon iconUpload d-flex justify-content-center">
+                                                    <i class="bi bi-cloud-arrow-up-fill fs-1 w-100 d-flex justify-content-end m-3" v-if="!image"></i>
+                                                    <img :src="image" alt="" width="100px">
+                                                </div> 
+                                                <span class="d-flex justify-content-center text-align-center">Drag & Drop File here</span>
+                                                <div class="iconUpload d-flex justify-content-center m-1">
+                                                    <a  class="btn btn-dark btn-sm mb-1 d-flex justify-content-center m-1" id="uploadButton">Upload File</a>
+                                                    <button type="button" class="border-0 p-0 bg-white m-1" @click="deleteMainImage" ><i class="bi bi-trash3"></i></button>
+                                                </div>
+                                                <input type="file" id="file"  @change="handleFileChange" style="display: none;">
+                                            </label>
                                         </div>
 
                                     </div>
@@ -415,11 +151,23 @@
     </main>
     <!-- End mainPanel-->
 </template>
-<script>
-export default {
-    name: 'returnItem',
-    props: {
-        msg: String
-    }
-}
+<script setup>
+import {  ref } from 'vue';
+
+const image = ref('');  
+
+const handleFileChange = (event) => {
+  const file = event.target.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      image.value = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  }
+};
+
+const deleteMainImage = () => {
+  image.value = '';
+};
 </script>

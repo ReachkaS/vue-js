@@ -14,32 +14,32 @@ const routes = [
     component: homepage,
   },
   {
-    path: "/LISTEVENT",
+    path: "/listEvent",
     name: "listEvent",
     component: ListEvent,
   },
   {
-    path: "/REQUESTITEM",
+    path: "/listEvent/requestItem",
     name: "requestItem",
     component: RequestItem,
   },
   {
-    path: "/ADDITEM",
+    path: "/listEvent/listRequest/addItem",
     name: "addItem",
     component: AddItem,
   },
   {
-    path: "/LISTREQUEST",
+    path: "/listEvent/listRequest",
     name: "listRequest",
     component: ListRequest,
   },
   {
-    path: "/RETURNITEM",
+    path: "/listEvent/listRequest/returnItem",
     name: "returnItem",
     component: ReturnItem,
   },
   {
-    path: "/DEPOSEITEM",
+    path: "/listEvent/listRequest/deposeItem",
     name: "deposeItem",
     component: DeposeItem,
   },
