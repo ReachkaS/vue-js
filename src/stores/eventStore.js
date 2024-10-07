@@ -26,7 +26,7 @@ export const useEventsStore = defineStore('events', () => {
       console.error('Error adding event:', err);
     }
   };
-
+ 
   return { events, error, fetchEvents, addEvent };
 });
 export const useAddStore = defineStore('items', () => {

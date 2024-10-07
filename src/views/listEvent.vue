@@ -19,7 +19,7 @@
               </div>
               <div class="col-5 col-md-5 col-lg-3 d-lg-flex d-md-flex d-block  btn-createEvent shadow-none">
                 <a type="button" class="btn filter border-0 bg-white m-1  btn-sm"><i
-                        class="bi bi-filter"></i> Filter</a>
+                        class="bi bi-filter" @click="filterbyId"></i> Filter</a>
                 <a type="button" class="btn border-black btn-sm m-1 "><i
                         class="bi bi-cloud-download "></i> Export</a>
                 <router-link to="/" class="btn btnSavePublish btn-sm m-1"><i
@@ -69,15 +69,17 @@
                                                     <li><router-link to="/listEvent/listRequest" class="dropdown-item"><i
                                                                 class="bi bi-eye"></i> View Detail</router-link></li>
                                                                 <li>
-                                                        <hr class="dropdown-divider">
-                                                    </li>            
+                                                        <hr class="dropdown-divider w-75 mx-auto">
+                                                    </li>      
                                                     <li><router-link to="/listEvent/requestItem" class="dropdown-item"><i
                                                                 class="bi bi-diagram-2"></i> Request Item</router-link>
                                                     </li><li>
-                                                        <hr class="dropdown-divider">
+                                                        <hr class="dropdown-divider w-75 mx-auto">
                                                     </li>
                                                     <li><router-link to="#" class="dropdown-item"><i
-                                                                class="bi bi-pencil-square"></i> Edit</router-link></li>
+                                                                class="bi bi-pencil-square"></i> Edit</router-link></li><li>
+                                                        <hr class="dropdown-divider w-75 mx-auto">
+                                                    </li>
                                     
                                                 </ul>
                                             </div>
@@ -114,6 +116,7 @@ const { events } = eventsStore;
 onMounted(() => {
     eventsStore.fetchEvents();
 });
+
 
 
 

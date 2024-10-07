@@ -132,7 +132,7 @@ const eventAddress = ref('');
 const description = ref('');
 const image = ref('');  
 const refnum = ref(''); 
-const numofItem = ref('')
+const numofItem = ref('');
 const error = ref('');
 
 const handleAddEvent = async () => {
@@ -185,4 +185,3 @@ const deleteMainImage = () => {
 
 
 </script>
-

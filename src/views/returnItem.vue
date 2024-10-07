@@ -52,7 +52,7 @@
                                     </select>
                                 </div>
                             </form>
-                            <div class="card card-request shadow-none border-0">
+                            <div class="card card-request shadow-none border-0 mt-2">
                                 <table class="table table-Request col-12 col-md-12 col-lg-12">
                                     <thead>
                                         <tr>
@@ -152,10 +152,17 @@
     <!-- End mainPanel-->
 </template>
 <script setup>
-import {  ref } from 'vue';
 
-const image = ref('');  
+import {  ref, onMounted } from 'vue';
+import { useAddStore } from '@/stores/eventStore';
 
+const image = ref(''); 
+const addStore = useAddStore(); 
+const { items, itemCounts, fetchItems, increment, decrement, removeItem } = addStore;
+
+onMounted(() => {
+    fetchItems();
+});
 const handleFileChange = (event) => {
   const file = event.target.files[0];
   if (file) {

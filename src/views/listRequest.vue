@@ -52,14 +52,14 @@
                                 </thead>
                                 <tbody style="font-size: 12px;">
                                     <tr v-for="event in events" :key="event.id">
-                                        <td>{{ [event.id].length }}</td>
+                                        <td>{{ event.id }}</td>
                                         <td>{{ event.startDate }}</td>
                                         <!-- <td>1NCCCCC</td> -->
-                                         <td>{{ event.ref }}</td>
+                                        <td>{{ event.ref }}</td>
                                         <td>{{ event.title }}</td>
                                         <td style="font-family: Hanuman;">{{ event.address }}</td>
-                                        <!-- <td>100</td> -->
-                                         <td>100</td>
+                                        <td>100</td>
+                                         <!-- <td v-for="item in items" :key="item.id">{{ itemCounts[item.id] }}</td> -->
                                         <td>
                                             <input type="checkbox" checked="checked" id="favorite" name="favorite-checkbox" value="favorite-button">
                                             <label for="favorite" class="container">
@@ -81,15 +81,21 @@
                                                 </button>
                                                 <ul class="dropdown-menu">
                                                     <li><router-link to="/listEvent/listRequest" class="dropdown-item"><i
-                                                                class="bi bi-eye"></i> View Detail</router-link></li>
+                                                                class="bi bi-eye"></i>View Detail</router-link></li>
+                                                                <li>
+                                                        <hr class="dropdown-divider w-75 mx-auto">
+                                                    </li>
                                                     <li><router-link to="/listEvent/listRequest/returnItem" class="dropdown-item"><img
                                                                 src="../assets/images/Frame (3).png" alt=""
                                                                 width="19px"> Return Item</router-link></li>
+                                                                <li>
+                                                        <hr class="dropdown-divider w-75 mx-auto">
+                                                    </li>
                                                     <li><router-link to="/listEvent/listRequest/deposeItem" class="dropdown-item"><img
                                                                 src="../assets/images/Frame (4).png" alt=""
                                                                 width="19px"> Depose</router-link></li>
                                                     <li>
-                                                        <hr class="dropdown-divider">
+                                                        <hr class="dropdown-divider w-75 mx-auto">
                                                     </li>
                                                 </ul>
                                             </div>
@@ -124,8 +130,10 @@ import { useEventsStore } from '@/stores/eventStore';
 const eventsStore = useEventsStore();
 const { events } = eventsStore;
 
+
 onMounted(() => {
     eventsStore.fetchEvents();
+
 });
 
 

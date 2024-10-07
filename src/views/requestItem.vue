@@ -11,8 +11,6 @@
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><router-link to="/listEvent">List
                                 Event</router-link></li>
-                        <li class="breadcrumb-item"><router-link to="/listEvent/listRequest">List
-                            Event</router-link></li>
                         <li class="breadcrumb-item"><router-link to="/listEvent/requestItem"> 
                             <span style="color:rgba(17, 134, 203, 1)">Request</span></router-link>
                         </li>
@@ -42,8 +40,8 @@
                                 </div>
                                 <div class="col-12">
                                     <label for="reference" class="form-label p-1">Reference</label>
-                                    <input type="text" name="reference" class="form-control shadow-none" id=""
-                                        placeholder="Reference">
+                                    <input type="text" name="refnum" class="refnum form-control shadow-none" id=""
+                                        placeholder="Reference" >
                                 </div>
                                 <div class="col-12">
                                     <label for="warehouse" class="form-label p-1">Warehouse</label>
@@ -161,10 +159,9 @@
 import {  ref, onMounted } from 'vue';
 import { useAddStore } from '@/stores/eventStore';
 
-const image = ref('');  
 const addStore = useAddStore();
 const { items, itemCounts, fetchItems, increment, decrement, removeItem } = addStore;
-
+const image = ref('');
 onMounted(() => {
     fetchItems();
 });
